@@ -1,38 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     int Numero;
     public GameObject[] Item;
-    int Milesimo, Segundos;
+    public int Milesimo, Segundos, segundostempo, minutostempo, milesimostempo;
+    DescontaPontos descontap;
+    public GameObject canvas, textovitoria;
+    public Text txttempo;
+    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         Milesimo = 60;
-        Segundos = 6;
+        Segundos = 5;
+        segundostempo = 60;
+        minutostempo = 60;
+        milesimostempo = 200;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Milesimo -= 1; 
+        Milesimo -= 1;
+        milesimostempo -= 1;
 
         if (Milesimo == 0)
         {
             Segundos -= 1;
             Milesimo = 60;
+            
         }
+        if (milesimostempo == 0)
+        {
+            milesimostempo = 200;
+            segundostempo -= 1;
+        }
+        if (segundostempo == 0)
+        {
+            textovitoria.SetActive(true);
+            SceneManager.LoadScene("Você Venceu!!");
 
+
+        }
+        
+        
+        
+        
         if (Segundos == 0)
         {
             GeradorDeItem();
-            Segundos = 6;
+            Segundos = 4;
         }
+        txttempo.text = "Time: " + segundostempo;
+       
+
+
     }
 
     public void GeradorDeItem()

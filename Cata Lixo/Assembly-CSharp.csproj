@@ -60,9 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Botao.cs" />
+    <Compile Include="Assets\Scripts\Chamajogo.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\DescontaPontos.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ItemController.cs" />
+    <Compile Include="Assets\Scripts\telaInicial.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/bruno.msouza17/Desktop/Cata Lixo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
